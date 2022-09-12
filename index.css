@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 10% 10% 10% 35% 35%;
+    gap: 10px;
+    padding: 5px;
+    box-sizing: border-box;
+
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    background: #2238A4;
+    background: -moz-linear-gradient(-45deg, #2238A4 0%, #205ECB 49%, #276F75 100%);
+    background: -webkit-linear-gradient(-45deg, #2238A4 0%, #205ECB 49%, #276F75 100%);
+    background: linear-gradient(135deg, #2238A4 0%, #205ECB 49%, #276F75 100%);
+}
+
+.card .back-view img {
+    max-width: 80px;
+}
+
+.header1 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.header2 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+}
+
+.header3 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+}
+
+.header4 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+}
+
+.table1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 4;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+}
+
+.table2 {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 4;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+}
+
+.table3 {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+}
+
+.container {
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    height: 200px;
+    width: 200px;
+    background: linear-gradient(to right, #fc6767, #ec008c);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px;
+    display: flex;
+}
+
+.cards,
+.card,
+.view {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards {
+    height: 100%;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cards .card {
+    height: calc(100% / 5 - 5px);
+    width: calc(100% / 4 - 5px);
+    position: relative;
+    perspective: 800px;
+    transform-style: preserve-3d;
+}
+
+.cards .card .view {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 25px 0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0.616);
+    position: absolute;
+    transition: transform .25s linear;
+    backface-visibility: hidden;
+    pointer-events: none;
+    user-select: none;
+}
+
+.card .back-view {
+    /*display: none;*/
+    transform: rotateY(-180deg);
+}
+
+.card.flip .back-view {
+    transform: rotateY(0);
+}
+
+.card.flip .front-view {
+    transform: rotateY(180deg);
+}
+
+.card.vibration {
+    animation: vibration 0.38 ease-in-out;
+}
+
+@keyframes vibration {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-13px);
+    }
+
+    40% {
+        transform: translateX(13px);
+    }
+
+    60% {
+        transform: translateX(-8px);
+    }
+
+    80% {
+        transform: translateX(8px);
+    }
+}
+
+.myButton {
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    line-height: 16px;
+    padding: 6px;
+    border-radius: 10px;
+    font-family: Georgia, serif;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%);
+    box-shadow: rgb(0, 0, 0) 1px 1px 5px 0px;
+    border: 2px solid rgb(28, 110, 164);
+    display: inline-block;
+}
+
+.myButton:hover {
+    background: #1C6EA4;
+}
+
+.myButton:active {
+    background: #144E75;
+}
